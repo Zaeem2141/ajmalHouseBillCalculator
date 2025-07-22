@@ -709,7 +709,7 @@ export default function CalculatorPage() {
                             No rooms added yet
                           </p>
                           <p className="text-gray-400 text-sm mb-4">
-                            Click "Add Room" to start adding rooms to this floor
+                            Click &quot;Add Room&quot; to start adding rooms to this floor
                           </p>
                         </div>
                       ) : (
