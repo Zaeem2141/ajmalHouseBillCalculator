@@ -738,7 +738,7 @@ export default function CalculatorPage() {
                                   <Input
                                     type="number"
                                     min="0"
-                                    value={room.currentReading === 0 ? 0 : room.currentReading || ""}
+                                    value={room.subMeterUnits === 0 ? 0 : room.subMeterUnits || ""}
                                     onChange={(e) =>
                                       updateRoom(
                                         floor.id,
