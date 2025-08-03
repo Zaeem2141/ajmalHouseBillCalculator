@@ -55,10 +55,10 @@ const years = Array.from({ length: 10 }, (_, i) =>
 export default function CalculatorPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    totalElectricityBill: 4000,
-    totalUnits: 400,
-    totalWasaBill: 1200,
-    numberOfFloors: 3,
+    totalElectricityBill: 0,
+    totalUnits: 0,
+    totalWasaBill: 0,
+    numberOfFloors: 0,
     floors: [],
     subMeterCost: 0,
     commonCost: 0,
@@ -249,7 +249,7 @@ export default function CalculatorPage() {
         const subMeterCost = room?.subMeterUnits * electricityPerUnit;
         const commonCost = totalCommonCost / totalRooms;
         const totalCost = wasaCost + subMeterCost + commonCost;
-        const electricityCost = subMeterCost + commonCost
+        const electricityCost = subMeterCost + commonCost;
 
         roomBills.push({
           roomId: room.id,
@@ -563,60 +563,6 @@ export default function CalculatorPage() {
 
             <Separator />
 
-            {/* Additional Costs Section */}
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <div className="w-6 h-6 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-white font-bold text-sm">💰</span>
-                </div>
-                Additional Costs
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Label
-                    htmlFor="subMeterCost"
-                    className="text-gray-700 text-base font-semibold"
-                  >
-                    Total Sub Meter Cost (PKR){" "}
-                    <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="subMeterCost"
-                    type="number"
-                    value={formData.subMeterCost || ""}
-                    onChange={(e) =>
-                      handleInputChange("subMeterCost", e.target.value)
-                    }
-                    placeholder="1000"
-                    className="mt-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <Label
-                    htmlFor="commonCost"
-                    className="text-gray-700 text-base font-semibold"
-                  >
-                    Total Common Cost (PKR){" "}
-                    <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="commonCost"
-                    type="number"
-                    value={formData.commonCost || ""}
-                    onChange={(e) =>
-                      handleInputChange("commonCost", e.target.value)
-                    }
-                    placeholder="2000"
-                    className="mt-2"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Separator />
-
             {/* Building Structure */}
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
@@ -647,7 +593,7 @@ export default function CalculatorPage() {
                         Number.parseInt(e.target.value) || 1
                       )
                     }
-                    placeholder="2"
+                    placeholder="0"
                     className="w-full sm:w-32 text-center text-lg font-semibold"
                     required
                   />
@@ -709,7 +655,8 @@ export default function CalculatorPage() {
                             No rooms added yet
                           </p>
                           <p className="text-gray-400 text-sm mb-4">
-                            Click &quot;Add Room&quot; to start adding rooms to this floor
+                            Click &quot;Add Room&quot; to start adding rooms to
+                            this floor
                           </p>
                         </div>
                       ) : (
@@ -762,7 +709,7 @@ export default function CalculatorPage() {
                                   <Input
                                     type="number"
                                     min="0"
-                                    value={room.currentReading || ""}
+                                    value={room.currentReading === 0 ? 0 : room.currentReading || ""}
                                     onChange={(e) =>
                                       updateRoom(
                                         floor.id,
@@ -791,7 +738,7 @@ export default function CalculatorPage() {
                                   <Input
                                     type="number"
                                     min="0"
-                                    value={room.subMeterUnits || ""}
+                                    value={room.currentReading === 0 ? 0 : room.currentReading || ""}
                                     onChange={(e) =>
                                       updateRoom(
                                         floor.id,

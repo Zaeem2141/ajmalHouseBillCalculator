@@ -120,57 +120,7 @@ export default function BillDisplay({ formData, calculatedBill, onBack }) {
       </div>
 
   <!-- Summary Section -->
-  <div style="background: #e0f2fe; border-left: 6px solid #0ea5e9; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-    <h2 style="margin: 0 0 10px; font-size: 22px;">📋 About This Bill</h2>
-    <p style="margin: 0; font-size: 14px;">
-      This document summarizes your monthly utility and/or rent expenses. All amounts are calculated using shared consumption metrics and room-wise allocations.
-      Please review your charges carefully and submit payment via the bank details below.
-    </p>
-  </div>
-
-  <!-- Payment Instructions -->
-  <div style="background: #fef9c3; padding: 25px; border-left: 6px solid #facc15; border-radius: 10px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 10px; font-size: 20px;">💳 Payment Instructions</h3>
-    <ul style="font-size: 14px; margin: 0; padding-left: 20px; color: #92400e;">
-      <li>Pay by the <strong>5th of every month</strong> to avoid penalties.</li>
-      <li>Use online transfer or direct deposit only.</li>
-      <li><strong>Send a screenshot of payment</strong> via WhatsApp to confirm.</li>
-      <li>Late or incomplete payments will incur a fine.</li>
-    </ul>
-  </div>
-
-  <!-- Bank Account Details -->
-  <div style="background: #ecfdf5; padding: 25px; border-left: 6px solid #10b981; border-radius: 10px; margin-bottom: 30px;">
-    <h3 style="margin: 0 0 10px; font-size: 20px;">🏦 Bank Account</h3>
-    <p style="margin: 5px 0; font-size: 14px;"><strong>Account Title:</strong> Ajmal House Management</p>
-    <p style="margin: 5px 0; font-size: 14px;"><strong>Account Number:</strong> 0101 2233 4455 66</p>
-    <p style="margin: 5px 0; font-size: 14px;"><strong>Bank:</strong> Meezan Bank</p>
-    <p style="margin: 5px 0; font-size: 14px;"><strong>IBAN:</strong> PK93MEZN00000001012233445566</p>
-  </div>
-
-  <!-- Help & Support -->
-  <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 25px; border-radius: 10px; text-align: center;">
-    <h3 style="font-size: 18px; font-weight: bold; color: #0f172a; margin-bottom: 10px;"> Need Help?</h3>
-    <p style="font-size: 14px; margin: 0;">If you find any issue in your bill or have a question, please reach out:</p>
-    <p style="font-size: 14px; margin: 8px 0;"><strong>WhatsApp Only:</strong> <span style="color: #16a34a;">+92 307 1632603</span></p>
-    <p style="font-size: 14px; margin: 0;">You can share payment proof or complaints through WhatsApp for quick resolution.</p>
-    <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">This bill is system-generated. No manual changes are accepted.</p>
-  </div>
-
-   <div style="text-align: center; background: #1f2937; color: white; padding: 25px; border-radius: 12px;">
-    <p style="font-size: 13px; margin-bottom: 6px;">📅 Generated on: <strong>${new Date().toLocaleDateString()}</strong></p>
-    <p style="font-size: 14px; font-weight: bold; color: #fbbf24; margin: 10px 0 4px;">Designed & Developed by Abdullah Rasheed</p>
-    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">Full Stack Developer & Automation Engineer</p>
-    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">📧 abdullah@example.com &nbsp;|&nbsp; 📱 +92 300 1234567</p>
-    <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">Providing Smart Digital Tools for Smart Living</p>
-  </div>
-
-</div>
-
-    <!-- Grand Total Page -->
-    <div class="pdf-page" style="width: 210mm; min-height: 297mm; padding: 25mm; background: white; page-break-after: always;">
-
-      <!-- Grand Total Section -->
+ <!-- Grand Total Section -->
       <div style="background: #1f2937; color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 40px;">
         <h3 style="font-size: 32px; font-weight: bold; color: white; margin: 0 0 25px 0;">💰 GRAND TOTAL</h3>
         <div style="font-size: 56px; font-weight: bold; margin-bottom: 20px; color: #fbbf24;">
@@ -192,6 +142,54 @@ export default function BillDisplay({ formData, calculatedBill, onBack }) {
     <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">📧 zaeem2141@gmail.com &nbsp;|&nbsp; 📱 +92 307 1632603</p>
     <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">Providing Smart Digital Tools for Smart Living</p>
   </div>
+
+</div>
+
+    <!-- Grand Total Page -->
+    <div class="pdf-page" style="width: 210mm; min-height: 297mm; padding: 25mm; background: white; page-break-after: always;">
+    
+<div style="text-align: center; margin-bottom: 40px; background: #fff7ed; padding: 25px; border-radius: 15px; border: 2px solid #fed7aa;">
+        <h2 style="font-size: 32px; font-weight: bold; color: #1f2937; margin-bottom: 10px;">💳 Account Details and Guidlines</h2>
+        <div style="font-size: 16px; color: #6b7280; font-weight: 600;">${
+          formData.month
+        } ${formData.year}</div>
+      </div>
+   <div style="background: #e0f2fe; border-left: 6px solid #0ea5e9; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
+    <h2 style="margin: 0 0 10px; font-size: 22px;">📋 About This Bill</h2>
+    <p style="margin: 0; font-size: 14px;">
+      This document summarizes your monthly utility and/or rent expenses. All amounts are calculated using shared consumption metrics and room-wise allocations.
+      Please review your charges carefully and submit payment via the bank details below.
+    </p>
+  </div>
+
+  <!-- Payment Instructions -->
+  <div style="background: #fef9c3; padding: 25px; border-left: 6px solid #facc15; border-radius: 10px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 10px; font-size: 20px;">💳 Payment Instructions</h3>
+    <ul style="font-size: 14px; margin: 0; padding-left: 20px; color: #92400e;">
+      <li>Pay by the <strong>5th of every month</strong> to avoid penalties.</li>
+      <li>Use online transfer or direct deposit only.</li>
+      <li><strong>Send a screenshot of payment</strong> via WhatsApp to confirm.</li>
+      <li>Late or incomplete payments will incur a fine.</li>
+    </ul>
+  </div>
+
+  <!-- Bank Account Details -->
+  <div style="background: #ecfdf5; padding: 25px; border-left: 6px solid #10b981; border-radius: 10px; margin-bottom: 30px;">
+    <h3 style="margin: 0 0 10px; font-size: 20px;">🏦 Bank Account</h3>
+    <p style="margin: 5px 0; font-size: 14px;"><strong>Account Title:</strong> Ajmal</p>
+    <p style="margin: 5px 0; font-size: 14px;"><strong>Account Number:</strong> 0287 0105 9394 99</p>
+    <p style="margin: 5px 0; font-size: 14px;"><strong>Bank:</strong> Meezan Bank</p>
+    <p style="margin: 5px 0; font-size: 14px;"><strong>IBAN:</strong> PK89MEZN0002870105939499</p>
+  </div>
+
+  <!-- Help & Support -->
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 25px; border-radius: 10px; text-align: center;">
+    <h3 style="font-size: 18px; font-weight: bold; color: #0f172a; margin-bottom: 10px;"> Need Help?</h3>
+    <p style="font-size: 14px; margin: 0;">If you find any issue in your bill or have a question, please reach out:</p>
+    <p style="font-size: 14px; margin: 8px 0;"><strong>WhatsApp Only:</strong> <span style="color: #16a34a;">+92 307 4477301</span></p>
+    <p style="font-size: 14px; margin: 0;">You can share payment proof or complaints through WhatsApp for quick resolution.</p>
+    <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">This bill is system-generated. No manual changes are accepted.</p>
+  </div>
       </div>
 
 
@@ -199,7 +197,13 @@ export default function BillDisplay({ formData, calculatedBill, onBack }) {
 
       <!-- Cost Breakdown -->
       <div style="margin-bottom: 40px;">
-        <h4 style="font-size: 24px; font-weight: bold; color: #1f2937; margin-bottom: 25px; text-align: center;">💳 Cost Breakdown</h4>
+              <div style="text-align: center; margin-bottom: 40px; background: #fff7ed; padding: 25px; border-radius: 15px; border: 2px solid #fed7aa;">
+        <h2 style="font-size: 32px; font-weight: bold; color: #1f2937; margin-bottom: 10px;">💳 Cost Breakdown</h2>
+        <div style="font-size: 16px; color: #6b7280; font-weight: 600;">${
+          formData.month
+        } ${formData.year}</div>
+      </div>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
           <div style="background: #eff6ff; padding: 25px; border-radius: 15px; border: 2px solid #bfdbfe; text-align: center;">
             <div style="font-size: 18px; color: #1e40af; font-weight: bold; margin-bottom: 10px;">⚡ Electricity Bill</div>
@@ -270,15 +274,6 @@ export default function BillDisplay({ formData, calculatedBill, onBack }) {
           </div>
         </div>
       </div>
-
-      <!-- System Attribution Footer -->
-      <div style="text-align: center; background: #1f2937; color: white; padding: 25px; border-radius: 12px;">
-    <p style="font-size: 13px; margin-bottom: 6px;">📅 Generated on: <strong>${new Date().toLocaleDateString()}</strong></p>
-    <p style="font-size: 14px; font-weight: bold; color: #fbbf24; margin: 10px 0 4px;">Designed & Developed by Zaeem Khan</p>
-    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">Full Stack Developer & Software Engineer</p>
-    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">📧 zaeem2141@gmail.com &nbsp;|&nbsp; 📱 +92 307 1632603</p>
-    <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">Providing Smart Digital Tools for Smart Living</p>
-  </div>
     </div>
 
     <!-- Rate Information Page -->
@@ -522,17 +517,14 @@ export default function BillDisplay({ formData, calculatedBill, onBack }) {
       }
 
       <!-- Final System Attribution Footer -->
-      <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e5e7eb;">
-        <div style="background: #1f2937; color: white; padding: 30px; border-radius: 15px; text-align: center;">
-          <div style="font-size: 20px; font-weight: bold; margin-bottom: 8px;">🌐 Ajmal House Bill Calculator</div>
-          <div style="font-size: 14px; opacity: 0.9; margin-bottom: 15px;">Professional Utility Bill Management System</div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
-            <div style="color: #fbbf24; font-size: 14px; font-weight: bold; margin-bottom: 5px;">🚀 Designed & Developed by Zaeem Khan</div>
-            <div style="color: rgba(255,255,255,0.8); font-size: 12px; margin-bottom: 3px;">Software Engineer • Full Stack Developer</div>
-            <div style="color: rgba(255,255,255,0.7); font-size: 11px;">Providing Professional Digital Solutions for Modern Businesses</div>
-          </div>
-        </div>
-      </div>
+      <div style="text-align: center; background: #1f2937; color: white; padding: 25px; border-radius: 12px;">
+    <p style="font-size: 13px; margin-bottom: 6px;">📅 Generated on: <strong>${new Date().toLocaleDateString()}</strong></p>
+    <p style="font-size: 14px; font-weight: bold; color: #fbbf24; margin: 10px 0 4px;">Designed & Developed by Zaeem Khan</p>
+    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">Full Stack Developer & Software Engineer</p>
+    <p style="font-size: 13px; color: #e2e8f0; margin: 2px 0;">📧 zaeem2141@gmail.com &nbsp;|&nbsp; 📱 +92 307 1632603</p>
+    <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">Providing Smart Digital Tools for Smart Living</p>
+  </div>
+
     </div>
   </div>
   `;
